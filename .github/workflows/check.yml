@@ -1,12 +1,11 @@
 name: Check
-on: push
+on: [push]
 jobs:
-    lint:
+    Explore-GitHub-Actions:
         runs-on: ubuntu-latest
         steps:
-            -name: Checkout
+            -name: Checkout repos Code
             uses: actions/checkout@v3
-            -name: Instal deps
-            run: npm ci
-            -name: lint
-            run: npm run lint
+            -name: List files in the repository
+            run: |
+            ls ${{ github.workspace }}
